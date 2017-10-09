@@ -52,7 +52,7 @@
     <TextView
         android:id="@+id/sid_label"
         android:layout_width="wrap_content"
-        android:layout_height="40dp"
+        android:layout_height="wrap_content"
         android:text="@string/sid_label"
         android:textSize="18sp"
         android:gravity="center_vertical"
@@ -61,17 +61,18 @@
     <EditText
         android:id="@+id/sid"
         android:layout_width="0dp"
-        android:layout_height="40dp"
+        android:layout_height="wrap_content"
         android:hint="@string/sid_hint"
         android:textSize="18sp"
         android:inputType="number"
-        app:layout_constraintTop_toBottomOf="@id/avatar"
+        app:layout_constraintTop_toTopOf="@id/sid_label"
+        app:layout_constraintBottom_toBottomOf="@id/sid_label"
         app:layout_constraintLeft_toRightOf="@id/sid_label"
         app:layout_constraintRight_toLeftOf="@id/line2"/>
     <TextView
         android:id="@+id/pwd_label"
         android:layout_width="wrap_content"
-        android:layout_height="40dp"
+        android:layout_height="wrap_content"
         android:text="@string/pwd_label"
         android:textSize="18sp"
         android:gravity="center_vertical"
@@ -81,11 +82,12 @@
     <EditText
         android:id="@+id/pwd"
         android:layout_width="0dp"
-        android:layout_height="40dp"
+        android:layout_height="wrap_content"
         android:hint="@string/pwd_hint"
         android:textSize="18sp"
         android:inputType="textPassword"
         app:layout_constraintTop_toTopOf="@id/pwd_label"
+        app:layout_constraintBottom_toBottomOf="@id/pwd_label"
         app:layout_constraintLeft_toRightOf="@id/pwd_label"
         app:layout_constraintRight_toLeftOf="@id/line2"/>
 
