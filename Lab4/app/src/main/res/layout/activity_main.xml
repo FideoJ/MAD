@@ -1,0 +1,184 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout
+    android:id="@+id/root_view"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.example.lab3.MainActivity">
+
+    <android.support.constraint.Guideline
+        android:id="@+id/line1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_begin="20dp"/>
+
+    <android.support.constraint.Guideline
+        android:id="@+id/line2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_end="20dp"/>
+
+    <android.support.constraint.Guideline
+        android:id="@+id/line3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.5"/>
+
+    <TextView
+        android:id="@+id/title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/title"
+        android:layout_marginTop="20dp"
+        android:textSize="20sp"
+        android:textColor="@color/colorPrimaryDark"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+    <ImageView
+        android:id="@+id/avatar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@mipmap/avatar"
+        android:contentDescription="@string/avatar_des"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/title"
+        android:layout_marginTop="20dp" />
+    <!-- <TextView
+        android:id="@+id/sid_label"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/sid_label"
+        android:textSize="18sp"
+        android:gravity="center_vertical"
+        app:layout_constraintTop_toBottomOf="@id/avatar"
+        app:layout_constraintLeft_toRightOf="@id/line1"/> -->
+
+    <android.support.design.widget.TextInputLayout
+        android:id="@+id/sid_input"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        app:layout_constraintTop_toBottomOf="@+id/avatar"
+        app:layout_constraintStart_toStartOf="@+id/line1"
+        app:layout_constraintEnd_toEndOf="@+id/line2">
+        <EditText
+            android:id="@+id/sid_text"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="@string/sid_hint"
+            android:inputType="number"
+            />
+    </android.support.design.widget.TextInputLayout>
+
+    <!-- <EditText
+        android:id="@+id/sid"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:hint="@string/sid_hint"
+        android:textSize="18sp"
+        android:inputType="number"
+        app:layout_constraintTop_toTopOf="@id/sid_label"
+        app:layout_constraintBottom_toBottomOf="@id/sid_label"
+        app:layout_constraintLeft_toRightOf="@id/sid_label"
+        app:layout_constraintRight_toLeftOf="@id/line2"/> -->
+
+    <!-- <TextView
+        android:id="@+id/pwd_label"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/pwd_label"
+        android:textSize="18sp"
+        android:gravity="center_vertical"
+        android:layout_marginTop="20dp"
+        app:layout_constraintTop_toBottomOf="@id/sid_label"
+        app:layout_constraintLeft_toRightOf="@id/line1"/> -->
+
+    <android.support.design.widget.TextInputLayout
+        android:id="@+id/pwd_input"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        app:layout_constraintTop_toBottomOf="@+id/sid_input"
+        app:layout_constraintStart_toStartOf="@+id/line1"
+        app:layout_constraintEnd_toEndOf="@+id/line2">
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/pwd_text"
+            android:hint="@string/pwd_hint"
+            android:inputType="textPassword"
+            />
+    </android.support.design.widget.TextInputLayout>
+
+    <!-- <EditText
+        android:id="@+id/pwd"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:hint="@string/pwd_hint"
+        android:textSize="18sp"
+        android:inputType="textPassword"
+        app:layout_constraintTop_toTopOf="@id/pwd_label"
+        app:layout_constraintBottom_toBottomOf="@id/pwd_label"
+        app:layout_constraintLeft_toRightOf="@id/pwd_label"
+        app:layout_constraintRight_toLeftOf="@id/line2"/> -->
+
+    <RadioGroup
+        android:id="@+id/radio_grp"
+        android:orientation="horizontal"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        app:layout_constraintLeft_toRightOf="@id/line1"
+        app:layout_constraintRight_toLeftOf="@id/line2"
+        app:layout_constraintTop_toBottomOf="@id/pwd_input">
+        <RadioButton
+            android:id="@+id/radio_student"
+            android:text="@string/role1"
+            android:textSize="18sp"
+            android:checked="true"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+        <RadioButton
+            android:id="@+id/radio_stuff"
+            android:text="@string/role2"
+            android:textSize="18sp"
+            android:layout_marginLeft="10dp"
+            android:layout_marginStart="10dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+    </RadioGroup>
+
+    <Button
+        android:id="@+id/login"
+        android:text="@string/login"
+        android:textSize="18sp"
+        android:background="@drawable/my_button"
+        app:layout_constraintTop_toBottomOf="@id/radio_grp"
+        android:layout_marginTop="20dp"
+        app:layout_constraintRight_toLeftOf="@id/line3"
+        android:layout_marginRight="5dp"
+        android:layout_marginEnd="5dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+
+    <Button
+        android:id="@+id/register"
+        android:text="@string/register"
+        android:textSize="18sp"
+        android:background="@drawable/my_button"
+        app:layout_constraintTop_toBottomOf="@id/radio_grp"
+        android:layout_marginTop="20dp"
+        app:layout_constraintLeft_toRightOf="@id/line3"
+        android:layout_marginLeft="5dp"
+        android:layout_marginStart="5dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+
+</android.support.constraint.ConstraintLayout>
